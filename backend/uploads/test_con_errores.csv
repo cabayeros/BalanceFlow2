@@ -1,0 +1,7 @@
+Fecha,Cuenta,Descripcion,Monto,Moneda,Banco
+21/11/2026,4100,Venta normal,1000.00,GTQ,BI
+21/11/2026,4100,Venta normal,1000.00,GTQ,BI
+22/11/2026,4100,Ingreso con signo mal,-500.00,GTQ,BI
+23/11/2026,5100,Gasto positivo,300.00,GTQ,BI
+24/11/2026,9999,Cuenta rara,200.00,GTQ,BI
+25/11/2026,4100,Moneda falsa,100.00,XYZ,BI

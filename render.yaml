@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: balanceflow-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    initialDeployHook: python seed.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.10
+      - key: DEBUG
+        value: "false"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: balanceflow-db
+          property: connectionString
+
+databases:
+  - name: balanceflow-db
+    databaseName: balanceflow
+    user: balanceflow
+    plan: free
